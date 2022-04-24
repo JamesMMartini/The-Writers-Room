@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49777f599edc9d94a91a95deba5b3c22, type: 3}
+  m_Name: CampyHorror
+  m_EditorClassIdentifier: 
+  chunks:
+  - "EXT: A dark and foreboding house, wooden exterior cracked and worn, is framed
+    by a strike of lightning illuminating a sign. The sign reads BASTION MANOR. \r\n\r\nWe
+    then see the PROTAGONISTS [PLAYERS 1, 3, and 4] walk up to the door. \r\n\r\nPLAYER
+    3: \r"
+  - "Suddenly it bursts open, revealing\u2026"
+  - 
+  - "PLAYER 4: Oh no, PLAYER 3! \r\n\r\nPLAYER 1: Ruuuuuun! \r\n\r\nVILLAIN, PLAYER
+    3:\r "
+  prompts:
+  - SAY SOMETHING THAT WILL IMMEDIATELY BE IRONIC WHEN THEY ARE SHORTLY KILLED BY
+    THE VILLAIN
+  - INTRODUCE A THREATENING VILLAIN, AS THEY APPROACH THE PROTAGONISTS WITH MURDEROUS
+    INTENT
+  - DESCRIBE HOW AN OVER THE TOP VILLAIN, PLAYER 2, KILLS A NEWLY INTRODUCED PROTAGONIST,
+    PLAYER 3, WITH AN OVER THE TOP METHOD
+  - SAY SOMETHING A SINISTER VILLAIN WOULD SAY AS THEY CHASED DOWN NEW VICTIMS
+  responses:
+  - 
+  - 
+  - 
+  - 
