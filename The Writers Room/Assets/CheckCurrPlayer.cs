@@ -18,7 +18,10 @@ public class CheckCurrPlayer : MonoBehaviour
 
     public void LetsStart()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("EnterResponse");
+        if (gameManager.currentState == GameManager.GameState.Response)
+            UnityEngine.SceneManagement.SceneManager.LoadScene("EnterResponse");
+        else if (gameManager.currentState == GameManager.GameState.ResponseVote)
+            UnityEngine.SceneManagement.SceneManager.LoadScene("VoteForResponse");
     }
 
 }

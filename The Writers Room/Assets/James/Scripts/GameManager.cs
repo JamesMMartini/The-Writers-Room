@@ -14,6 +14,14 @@ public class GameManager : MonoBehaviour
 
     public static GameObject gameManager;
 
+    public string[] finalResponses;
+
+    public int[] votes;
+
+    public enum GameState { Response, ResponseVote, Draw, DrawVote}
+
+    public GameState currentState;
+
     public class PlayerInfo
     {
         public string name;
@@ -43,19 +51,28 @@ public class GameManager : MonoBehaviour
         // Set the current MadLib
         currentMadLib = new MadLib(sceneObject);
 
+        currentState = GameState.Response;
+
+        finalResponses = new string[sceneObject.Prompts.Length];
+
         numPlayers = 0;
     }
 
     public void IteratePlayer() 
     {
+        responderIndex++;
+
         if (responderIndex == Players.Count)
-        {
             responderIndex = 0;
-        }
-        else 
-        {
-            responderIndex += 1;
-        }
+
+        //if (responderIndex == Players.Count)
+        //{
+        //    responderIndex = 0;
+        //}
+        //else 
+        //{
+        //    responderIndex += 1;
+        //}
         
     }
 

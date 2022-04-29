@@ -24,7 +24,7 @@ public class ShowResults : MonoBehaviour
             results.text += gameManager.currentMadLib.chunks[i];
             results.text += " ";
             results.text += gameManager.currentMadLib.responses[i];
-            results.text += "\n";
+            results.text += "\r\n";
         }
     }
 }
