@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public SceneObject sceneObject;
 
+    public int responderIndex;
+
     public int responseIndex;
 
     public static GameObject gameManager;
@@ -44,7 +46,20 @@ public class GameManager : MonoBehaviour
         numPlayers = 0;
     }
 
-    public static void addPlayer(string newName)
+    public void IteratePlayer() 
+    {
+        if (responderIndex == Players.Count)
+        {
+            responderIndex = 0;
+        }
+        else 
+        {
+            responderIndex += 1;
+        }
+        
+    }
+
+    public void AddPlayer(string newName)
     {
         // Add's a player's name and sets their other attributes to defaults
 
@@ -58,7 +73,7 @@ public class GameManager : MonoBehaviour
         numPlayers += 1;
     }
 
-    public static void addAnswer(int name, string newAnswer) 
+    public void AddAnswer(int name, string newAnswer) 
     {
         // Adds the corresponding player's answer to their data structure
 

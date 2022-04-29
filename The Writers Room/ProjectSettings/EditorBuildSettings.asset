@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/James/Scenes/EnterName.unity
+    guid: e2674d3e9e51a7d41b8313ee85a62489
+  - enabled: 1
+    path: Assets/James/Scenes/NewPlayer.unity
+    guid: b649927b5aca6084bb93a945eb31f87a
+  - enabled: 1
     path: Assets/James/Scenes/EnterResponse.unity
     guid: a2dce375229d4674ba8b5226142a9422
   - enabled: 1

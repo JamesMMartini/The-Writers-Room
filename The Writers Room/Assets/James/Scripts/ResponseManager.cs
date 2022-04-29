@@ -54,6 +54,7 @@ public class ResponseManager : MonoBehaviour
     {
         if (gameManager.responseIndex < gameManager.currentMadLib.prompts.Length - 1) // Go to the next response
         {
+            gameManager.AddAnswer(gameManager.responderIndex, response.text);
             gameManager.currentMadLib.responses[gameManager.responseIndex] = response.text;
             gameManager.responseIndex++;
 
@@ -61,8 +62,10 @@ public class ResponseManager : MonoBehaviour
         }
         else // End the input section
         {
+            gameManager.AddAnswer(gameManager.responderIndex, response.text);
             gameManager.currentMadLib.responses[gameManager.responseIndex] = response.text;
             gameManager.responseIndex++;
+            gameManager.IteratePlayer();
 
             SceneManager.LoadScene("ShowResults");
         }
