@@ -72,9 +72,18 @@ public class VoteForResponse : MonoBehaviour
                         // Record the vote
                         gameManager.finalResponses[gameManager.responseIndex] = result.gameObject.GetComponent<TMP_Text>().text;
 
+                        // Save the final vote to the finalResponses object
+                        int finalIndex = 0;
+                        for (int i = 1; i < gameManager.votes.Length; i++)
+                            if (gameManager.votes[i] > finalIndex)
+                                finalIndex = i;
+
+                        gameManager.finalResponses[gameManager.responseIndex] = GameManager.Players[finalIndex].answers[gameManager.responseIndex];
+
                         if (gameManager.responseIndex == gameManager.sceneObject.Chunks.Length - 1)
                         {
                             // END THE VOTING SECTION
+                            SceneManager.LoadScene("ShowResults");
                         }
                         else
                         {

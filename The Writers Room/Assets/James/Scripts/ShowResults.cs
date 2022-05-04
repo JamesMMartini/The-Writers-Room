@@ -19,11 +19,11 @@ public class ShowResults : MonoBehaviour
 
     void DisplayResults()
     {
-        for (int i = 0; i < gameManager.currentMadLib.chunks.Length; i++)
+        for (int i = 0; i < gameManager.sceneObject.Chunks.Length; i++)
         {
-            results.text += gameManager.currentMadLib.chunks[i];
+            results.text += gameManager.sceneObject.Chunks[i];
             results.text += " ";
-            results.text += gameManager.currentMadLib.responses[i];
+            results.text += gameManager.finalResponses[i];
             results.text += "\r\n";
         }
     }
