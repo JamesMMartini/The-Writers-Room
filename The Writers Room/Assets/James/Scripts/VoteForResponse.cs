@@ -53,17 +53,21 @@ public class VoteForResponse : MonoBehaviour
             {
                 if (result.gameObject.name.Contains("Response"))
                 {
+                    // Get the index of the response that the player selected
                     int selectedResponse = Convert.ToInt32(result.gameObject.name.Substring(result.gameObject.name.Length - 1)) - 1;
 
+                    // Increment the amount of votes that option received
                     gameManager.votes[selectedResponse]++;
 
+                    // Move the game manager to the next player
                     gameManager.IteratePlayer();
 
+                    // If the responder is not the first player, go to the next player
                     if (gameManager.responderIndex != 0)
                     {
                         SceneManager.LoadScene("NewPlayer");
                     }
-                    else
+                    else // If we have cycled through the players, record the vote
                     {
                         // Record the vote
                         gameManager.finalResponses[gameManager.responseIndex] = result.gameObject.GetComponent<TMP_Text>().text;
