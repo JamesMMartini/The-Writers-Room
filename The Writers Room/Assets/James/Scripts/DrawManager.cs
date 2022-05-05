@@ -31,7 +31,7 @@ public class DrawManager : MonoBehaviour
     IEnumerator StartDrawing()
     {
         readyPrompt.text = gameManager.currentMadLib.chunks[gameManager.responseIndex];
-        readyPrompt.text += "/n";
+        readyPrompt.text += "\n";
         readyPrompt.text += gameManager.finalResponses[gameManager.responseIndex];
 
         yield return new WaitForSeconds(5f);

@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/James/Scenes/DrawBoard.unity
     guid: 02786bee9ce90ab4bba01d12550a6624
+  - enabled: 1
+    path: Assets/James/Scenes/Drawing Vote.unity
+    guid: e76f22de3f84b26499c7138e49dbeade
   m_configObjects: {}
