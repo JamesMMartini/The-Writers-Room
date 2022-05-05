@@ -12,6 +12,7 @@ public class DrawManager : MonoBehaviour
     [SerializeField] GameObject drawer;
     [SerializeField] TMP_Text readyPrompt;
     [SerializeField] TMP_Text timer;
+    [SerializeField] TMP_Text showPromptText;
 
     GameManager gameManager;
 
@@ -58,7 +59,7 @@ public class DrawManager : MonoBehaviour
             timer.text = i.ToString();
         }
 
-        SubmitResponse();
+        StartCoroutine(SubmitResponse());
     }
 
     // Update is called once per frame
@@ -85,7 +86,7 @@ public class DrawManager : MonoBehaviour
                 {
                     if (result.gameObject.name == "ButtonBackground")
                     {
-                        SubmitResponse();
+                        StartCoroutine(SubmitResponse());
                     }
                     else if (result.gameObject.name == "Show Prompt")
                     {
@@ -109,18 +110,26 @@ public class DrawManager : MonoBehaviour
         readyPrompt.gameObject.SetActive(false);
     }
 
-    void SubmitResponse()
+    IEnumerator SubmitResponse()
     {
+        showPromptText.gameObject.SetActive(false);
+        timer.gameObject.SetActive(false);
+        readyPrompt.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(0.1f);
+
+        string filePath = TakeScreenshot();
+
         if (gameManager.responseIndex < gameManager.currentMadLib.prompts.Length - 1) // Go to the next response
         {
-            gameManager.AddDrawing(gameManager.responderIndex, null);
+            gameManager.AddDrawing(gameManager.responderIndex, filePath);
             gameManager.responseIndex++;
 
             SceneManager.LoadScene("DrawBoard");
         }
         else // End the input section
         {
-            gameManager.AddDrawing(gameManager.responderIndex, null);
+            gameManager.AddDrawing(gameManager.responderIndex, filePath);
             gameManager.responseIndex = 0;
             gameManager.IteratePlayer();
 
@@ -136,5 +145,24 @@ public class DrawManager : MonoBehaviour
                 SceneManager.LoadScene("NewPlayer");
             }
         }
+    }
+
+    string TakeScreenshot()
+    {
+        string folderPath = Application.persistentDataPath + "/" + "Screenshots/";
+
+        if (!System.IO.Directory.Exists(folderPath))
+            System.IO.Directory.CreateDirectory(folderPath);
+
+        var screenshotName =
+                                "Screenshot_" +
+                                System.DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss") +
+                                ".png";
+        
+        ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folderPath, screenshotName));
+
+        string finalPath = folderPath + screenshotName;
+        Debug.Log(finalPath);
+        return finalPath;
     }
 }

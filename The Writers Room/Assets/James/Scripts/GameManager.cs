@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
         public List<string> answers;
 
-        public List<GameObject> drawings;
+        public List<string> drawings;
     }
 
     public static Dictionary<int, PlayerInfo> Players = new Dictionary<int, PlayerInfo>();
@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
         newPlayer.name = newName;
         newPlayer.score = 0;
         newPlayer.answers = new List<string>();
+        newPlayer.drawings = new List<string>();
 
         Players.Add(numPlayers, newPlayer);
         numPlayers += 1;
@@ -99,10 +100,10 @@ public class GameManager : MonoBehaviour
         Players[name].answers.Add(newAnswer);
     }
 
-    public void AddDrawing(int name, GameObject newAnswer)
+    public void AddDrawing(int name, string filePath)
     {
         // Adds the corresponding player's drawing to their data structure
 
-        Players[name].drawings.Add(newAnswer);
+        Players[name].drawings.Add(filePath);
     }
 }
