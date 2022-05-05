@@ -83,7 +83,9 @@ public class VoteForResponse : MonoBehaviour
                         if (gameManager.responseIndex == gameManager.sceneObject.Chunks.Length - 1)
                         {
                             // END THE VOTING SECTION
-                            SceneManager.LoadScene("ShowResults");
+                            gameManager.currentState = GameManager.GameState.Draw;
+
+                            SceneManager.LoadScene("NewPlayer");
                         }
                         else
                         {

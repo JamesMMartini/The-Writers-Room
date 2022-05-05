@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/James/Scenes/VoteForResponse.unity
     guid: c009de039aa9c4346ab106a6414414f2
+  - enabled: 1
+    path: Assets/James/Scenes/DrawBoard.unity
+    guid: 02786bee9ce90ab4bba01d12550a6624
   m_configObjects: {}

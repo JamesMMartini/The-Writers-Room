@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
         public int score;
 
         public List<string> answers;
+
+        public List<GameObject> drawings;
     }
 
     public static Dictionary<int, PlayerInfo> Players = new Dictionary<int, PlayerInfo>();
@@ -95,5 +97,12 @@ public class GameManager : MonoBehaviour
         // Adds the corresponding player's answer to their data structure
 
         Players[name].answers.Add(newAnswer);
+    }
+
+    public void AddDrawing(int name, GameObject newAnswer)
+    {
+        // Adds the corresponding player's drawing to their data structure
+
+        Players[name].drawings.Add(newAnswer);
     }
 }
