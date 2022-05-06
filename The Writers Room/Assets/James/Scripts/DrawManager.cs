@@ -101,7 +101,7 @@ public class DrawManager : MonoBehaviour
     IEnumerator ShowPrompt()
     {
         readyPrompt.text = gameManager.currentMadLib.chunks[gameManager.responseIndex];
-        readyPrompt.text += "/n";
+        readyPrompt.text += "\n";
         readyPrompt.text += gameManager.finalResponses[gameManager.responseIndex];
 
         readyPrompt.gameObject.SetActive(true);
