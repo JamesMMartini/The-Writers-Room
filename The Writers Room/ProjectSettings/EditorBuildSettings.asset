@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/James/Scenes/Drawing Vote.unity
     guid: e76f22de3f84b26499c7138e49dbeade
+  - enabled: 1
+    path: Assets/James/Scenes/Animatic.unity
+    guid: b04e0f121c3ed74489ce9f7ebef7f8df
   m_configObjects: {}
