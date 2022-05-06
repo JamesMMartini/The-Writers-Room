@@ -12,6 +12,6 @@ public class MadLib
     {
         chunks = activeScene.Chunks;
         prompts = activeScene.Prompts;
-        responses = activeScene.Responses;
+        responses = new string[activeScene.Responses.Length];
     }
 }

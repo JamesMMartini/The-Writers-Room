@@ -11,6 +11,7 @@ public class ResponseManager : MonoBehaviour
     [SerializeField] EventSystem eventSystem;
     [SerializeField] TMP_InputField response;
     [SerializeField] TMP_Text prompt;
+    [SerializeField] TMP_Text timer;
 
     GameManager gameManager;
 
@@ -20,6 +21,8 @@ public class ResponseManager : MonoBehaviour
         gameManager = GameManager.gameManager.GetComponent<GameManager>();
 
         prompt.text = gameManager.currentMadLib.prompts[gameManager.responseIndex];
+
+        StartCoroutine(Timer());
     }
 
     // Update is called once per frame
@@ -50,6 +53,18 @@ public class ResponseManager : MonoBehaviour
         }
     }
 
+    IEnumerator Timer()
+    {
+        for (int i = 29; i >= 0; i--)
+        {
+            yield return new WaitForSeconds(1f);
+
+            timer.text = i.ToString();
+        }
+
+        SubmitResponse();
+    }
+
     void SubmitResponse()
     {
         if (gameManager.responseIndex < gameManager.currentMadLib.prompts.Length - 1) // Go to the next response
@@ -64,10 +79,20 @@ public class ResponseManager : MonoBehaviour
         {
             gameManager.AddAnswer(gameManager.responderIndex, response.text);
             gameManager.currentMadLib.responses[gameManager.responseIndex] = response.text;
-            gameManager.responseIndex++;
+            gameManager.responseIndex = 0;
             gameManager.IteratePlayer();
 
-            SceneManager.LoadScene("ShowResults");
+            if (gameManager.responderIndex != 0)
+            {
+                SceneManager.LoadScene("NewPlayer");
+            }
+            else
+            {
+                gameManager.currentState = GameManager.GameState.ResponseVote;
+                gameManager.responseIndex = 0;
+
+                SceneManager.LoadScene("NewPlayer");
+            }
         }
     }
 }
