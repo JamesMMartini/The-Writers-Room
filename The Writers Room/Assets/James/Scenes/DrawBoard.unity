@@ -1096,3 +1096,4 @@ MonoBehaviour:
   readyPrompt: {fileID: 1466016914}
   timer: {fileID: 1190833843}
   showPromptText: {fileID: 1862498784}
+  nextButton: {fileID: 628746671}

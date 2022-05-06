@@ -13,6 +13,7 @@ public class DrawManager : MonoBehaviour
     [SerializeField] TMP_Text readyPrompt;
     [SerializeField] TMP_Text timer;
     [SerializeField] TMP_Text showPromptText;
+    [SerializeField] GameObject nextButton;
 
     GameManager gameManager;
 
@@ -115,6 +116,7 @@ public class DrawManager : MonoBehaviour
         showPromptText.gameObject.SetActive(false);
         timer.gameObject.SetActive(false);
         readyPrompt.gameObject.SetActive(false);
+        nextButton.SetActive(false);
 
         yield return new WaitForSeconds(0.1f);
 
