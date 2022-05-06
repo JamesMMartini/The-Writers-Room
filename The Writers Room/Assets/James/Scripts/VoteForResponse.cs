@@ -22,7 +22,7 @@ public class VoteForResponse : MonoBehaviour
 
         gameManager.votes = new int[GameManager.Players.Count];
 
-        prompt.text = gameManager.sceneObject.Prompts[gameManager.responseIndex];
+        prompt.text = gameManager.currentMadLib.chunks[gameManager.responseIndex];
 
         for (int i = 0; i < GameManager.Players.Count; i++)
         {

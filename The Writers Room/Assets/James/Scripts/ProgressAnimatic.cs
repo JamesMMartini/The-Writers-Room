@@ -64,7 +64,10 @@ public class ProgressAnimatic : MonoBehaviour
         Debug.Log(gameManager.responseIndex);
 
         image.sprite = CreateSprite(gameManager.finalDrawings[currScene]);
-        caption.text = gameManager.finalResponses[currScene];
+
+        caption.text = gameManager.currentMadLib.chunks[currScene];
+        caption.text += "/n";
+        caption.text += gameManager.finalResponses[currScene];
     }
 
     void checkHigh() 

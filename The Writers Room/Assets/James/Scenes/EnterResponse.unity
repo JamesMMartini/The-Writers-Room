@@ -1156,6 +1156,7 @@ MonoBehaviour:
   responderIndex: 0
   responseIndex: 0
   finalResponses: []
+  finalDrawings: []
   votes: 
   currentState: 0
 --- !u!4 &1667810175
@@ -1345,8 +1346,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.9791, y: 2.7369}
-  m_SizeDelta: {x: 804.7985, y: 243.685}
+  m_AnchoredPosition: {x: -13.862, y: 2.7369}
+  m_SizeDelta: {x: 890.4796, y: 243.685}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2056511824
 MonoBehaviour:
