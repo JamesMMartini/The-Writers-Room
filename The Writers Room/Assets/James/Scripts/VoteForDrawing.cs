@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.IO;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using System;
 
 public class VoteForDrawing : MonoBehaviour
 {
     [SerializeField] TMP_Text promptText;
+    [SerializeField] EventSystem eventSystem;
 
     [SerializeField] Image[] images;
 
@@ -70,6 +74,70 @@ public class VoteForDrawing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            //Set up the new Pointer Event
+            PointerEventData mouseEventData = new PointerEventData(eventSystem);
+            //Set the Pointer Event Position to that of the mouse position
+            mouseEventData.position = Input.mousePosition;
+
+            //Create a list of Raycast Results
+            List<RaycastResult> results = new List<RaycastResult>();
+
+            //Raycast using the Graphics Raycaster and mouse click position
+            GraphicRaycaster rayCaster = GetComponentInParent<GraphicRaycaster>();
+            rayCaster.Raycast(mouseEventData, results);
+
+            //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
+            foreach (RaycastResult result in results)
+            {
+                if (result.gameObject.name.Contains("Image"))
+                {
+                    // Get the index of the response that the player selected
+                    int selectedResponse = Convert.ToInt32(result.gameObject.name.Substring(result.gameObject.name.Length - 1)) - 1;
+
+                    // Increment the amount of votes that option received
+                    gameManager.votes[selectedResponse]++;
+
+                    // Move the game manager to the next player
+                    gameManager.IteratePlayer();
+
+                    // If the responder is not the first player, go to the next player
+                    if (gameManager.responderIndex != 0)
+                    {
+                        SceneManager.LoadScene("NewPlayer");
+                    }
+                    else // If we have cycled through the players, record the vote
+                    {
+                        // Record the vote
+                        //gameManager.finalDrawings[gameManager.responseIndex] = GameManager.Players[selectedResponse].drawings[gameManager.responseIndex];
+
+                        // Save the final vote to the finalResponses object
+                        int finalIndex = 0;
+                        for (int i = 1; i < gameManager.votes.Length; i++)
+                            if (gameManager.votes[i] > finalIndex)
+                                finalIndex = i;
+
+                        gameManager.finalDrawings[gameManager.responseIndex] = GameManager.Players[finalIndex].drawings[gameManager.responseIndex];
+
+                        gameManager.votes = null;
+
+                        if (gameManager.responseIndex == gameManager.sceneObject.Chunks.Length - 1)
+                        {
+                            // END THE VOTING SECTION
+                            gameManager.currentState = GameManager.GameState.Animatic;
+
+                            SceneManager.LoadScene("NewPlayer");
+                        }
+                        else
+                        {
+                            gameManager.responseIndex++;
+
+                            SceneManager.LoadScene("NewPlayer");
+                        }
+                    }
+                }
+            }
+        }
     }
 }

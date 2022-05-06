@@ -120,7 +120,9 @@ public class DrawManager : MonoBehaviour
 
         string filePath = TakeScreenshot();
 
-        if (gameManager.responseIndex < gameManager.currentMadLib.prompts.Length - 1) // Go to the next response
+        Debug.Log(gameManager.responseIndex + " - " + gameManager.finalResponses.Length);
+
+        if (gameManager.responseIndex < gameManager.finalResponses.Length - 1) // Go to the next response
         {
             gameManager.AddDrawing(gameManager.responderIndex, filePath);
             gameManager.responseIndex++;

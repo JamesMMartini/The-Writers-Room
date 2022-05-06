@@ -16,9 +16,11 @@ public class GameManager : MonoBehaviour
 
     public string[] finalResponses;
 
+    public string[] finalDrawings;
+
     public int[] votes;
 
-    public enum GameState { Response, ResponseVote, Draw, DrawVote}
+    public enum GameState { Response, ResponseVote, Draw, DrawVote, Animatic}
 
     public GameState currentState;
 
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
         currentState = GameState.Response;
 
         finalResponses = new string[sceneObject.Prompts.Length];
+        finalDrawings = new string[sceneObject.Prompts.Length];
 
         numPlayers = 0;
     }

@@ -70,7 +70,7 @@ public class VoteForResponse : MonoBehaviour
                     else // If we have cycled through the players, record the vote
                     {
                         // Record the vote
-                        gameManager.finalResponses[gameManager.responseIndex] = result.gameObject.GetComponent<TMP_Text>().text;
+                        //gameManager.finalResponses[gameManager.responseIndex] = result.gameObject.GetComponent<TMP_Text>().text;
 
                         // Save the final vote to the finalResponses object
                         int finalIndex = 0;
@@ -80,10 +80,14 @@ public class VoteForResponse : MonoBehaviour
 
                         gameManager.finalResponses[gameManager.responseIndex] = GameManager.Players[finalIndex].answers[gameManager.responseIndex];
 
+                        gameManager.votes = null;
+
                         if (gameManager.responseIndex == gameManager.sceneObject.Chunks.Length - 1)
                         {
                             // END THE VOTING SECTION
                             gameManager.currentState = GameManager.GameState.Draw;
+                            gameManager.responseIndex = 0;
+                            gameManager.responderIndex = 0;
 
                             SceneManager.LoadScene("NewPlayer");
                         }
