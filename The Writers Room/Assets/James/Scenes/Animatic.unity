@@ -334,56 +334,6 @@ RectTransform:
   m_AnchoredPosition: {x: 81.32001, y: -435.4}
   m_SizeDelta: {x: 797.36, y: 78.3912}
   m_Pivot: {x: 0.000000012572855, y: 1}
---- !u!1 &173421588
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 173421590}
-  - component: {fileID: 173421589}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &173421589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173421588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa29fc1ef2f3f4b4c9b8da120124f8e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneObject: {fileID: 11400000, guid: b7b592c60c697834ba4a8decd924e0fb, type: 2}
-  responderIndex: 0
-  responseIndex: 0
-  finalResponses: []
-  votes: 
-  currentState: 0
---- !u!4 &173421590
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173421588}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &531177119
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +433,7 @@ RectTransform:
   - {fileID: 1585677468}
   - {fileID: 1493126487}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1029,9 +979,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CheckCurrPlayer, Assembly-CSharp
-        m_MethodName: LetsStart
+      - m_Target: {fileID: 1245618649}
+        m_TargetAssemblyTypeName: ProgressAnimatic, Assembly-CSharp
+        m_MethodName: lastSection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1053,6 +1003,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6b97fb798ace743925cf1ad2f9c5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 1178777109}
+  caption: {fileID: 151594035}
+  sceneNumber: {fileID: 1493126488}
+  nextScene: {fileID: 1585677467}
+  lastScene: {fileID: 1245618645}
 --- !u!1 &1493126486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,9 +1229,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CheckCurrPlayer, Assembly-CSharp
-        m_MethodName: LetsStart
+      - m_Target: {fileID: 1585677471}
+        m_TargetAssemblyTypeName: ProgressAnimatic, Assembly-CSharp
+        m_MethodName: nextSection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1298,6 +1253,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6b97fb798ace743925cf1ad2f9c5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 1178777109}
+  caption: {fileID: 151594035}
+  sceneNumber: {fileID: 1493126488}
+  nextScene: {fileID: 1585677467}
+  lastScene: {fileID: 1245618645}
 --- !u!1 &1681028861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,7 +1323,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1769095459
 GameObject:

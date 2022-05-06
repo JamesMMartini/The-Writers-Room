@@ -26,6 +26,8 @@ public class CheckCurrPlayer : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("DrawBoard");
         else if (gameManager.currentState == GameManager.GameState.DrawVote)
             UnityEngine.SceneManagement.SceneManager.LoadScene("Drawing Vote");
+        /*else if (gameManager.currentState == GameManager.GameState.Animatic)
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Animatic");*/
     }
 
 }

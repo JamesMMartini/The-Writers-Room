@@ -37,9 +37,17 @@ public class VoteForDrawing : MonoBehaviour
 
         for (int i = 0; i < images.Length; i++)
         {
-            // Set the sprite
-            images[i].sprite = CreateSprite(GameManager.Players[i].drawings[gameManager.responseIndex]);
-            //images[i].sprite = CreateSprite(tempFiles[i]);
+            if (i == 3 && GameManager.Players.Count < 4) 
+            {
+                images[i].transform.gameObject.SetActive(false);
+            }
+            else 
+            {
+                // Set the sprite
+                images[i].sprite = CreateSprite(GameManager.Players[i].drawings[gameManager.responseIndex]);
+                //images[i].sprite = CreateSprite(tempFiles[i]);
+            }
+
         }
     }
 
@@ -127,7 +135,7 @@ public class VoteForDrawing : MonoBehaviour
                             // END THE VOTING SECTION
                             gameManager.currentState = GameManager.GameState.Animatic;
 
-                            SceneManager.LoadScene("NewPlayer");
+                            SceneManager.LoadScene("Animatic");
                         }
                         else
                         {
