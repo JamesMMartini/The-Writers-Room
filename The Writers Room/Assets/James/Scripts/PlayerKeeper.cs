@@ -36,6 +36,11 @@ public class PlayerKeeper : MonoBehaviour
         canv = GameObject.Find("Canvas");
     }
 
+    void Update() 
+    { 
+        if (Input.GetKeyUp(KeyCode.Return)) { checkReady(); }
+    }
+
     public void checkReady() 
     {
         if (currPlayer < 4) 

@@ -22,7 +22,16 @@ public class VoteForResponse : MonoBehaviour
 
         gameManager.votes = new int[GameManager.Players.Count];
 
-        prompt.text = gameManager.currentMadLib.chunks[gameManager.responseIndex];
+        string holder = gameManager.currentMadLib.chunks[gameManager.responseIndex];
+
+        for (int i = 1; i < GameManager.Players.Count+1; i++)
+        {
+            string helper = "PLAYER " + i;
+
+            holder = holder.Replace(helper, GameManager.Players[i-1].name);
+        }
+
+        prompt.text = holder;
         
         int j = 0;
 

@@ -59,7 +59,16 @@ public class ProgressAnimatic : MonoBehaviour
 
         image.sprite = CreateSprite(gameManager.finalDrawings[currScene]);
 
-        caption.text = gameManager.currentMadLib.chunks[currScene];
+        string holder = gameManager.currentMadLib.chunks[currScene];
+
+        for (int i = 1; i < GameManager.Players.Count + 1; i++)
+        {
+            string helper = "PLAYER " + i;
+
+            holder = holder.Replace(helper, GameManager.Players[i-1].name);
+        }
+
+        caption.text = holder;
         caption.text += "/n";
         caption.text += gameManager.finalResponses[currScene];
     }

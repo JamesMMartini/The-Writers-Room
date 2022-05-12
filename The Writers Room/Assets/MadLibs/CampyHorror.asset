@@ -13,22 +13,17 @@ MonoBehaviour:
   m_Name: CampyHorror
   m_EditorClassIdentifier: 
   chunks:
-  - "EXT: A dark and foreboding house, wooden exterior cracked and worn, is framed
-    by a strike of lightning illuminating a sign. The sign reads BASTION MANOR. \r\n\r\nWe
-    then see the PROTAGONISTS [PLAYERS 1, 3, and 4] walk up to the door. \r\n\r\nPLAYER
-    3: \r"
-  - "Suddenly it bursts open, revealing\u2026"
-  - PLAYER 2 lunges at PLAYER 3, and suddenly...
-  - "PLAYER 4: Oh no, PLAYER 3! \r\n\r\nPLAYER 1: Ruuuuuun! \r\n\r\nVILLAIN, PLAYER
-    3:\r "
+  - 'EXT: As a car pulls in on a dirt road, a strike of lightning illuminates '
+  - "PLAYER 3: I gotta say this is exciting, I\u2019ve been dying for this vacation.
+    \r\n\r\nSuddenly the front door bursts open, revealing \n"
+  - 'PLAYER 2 lunges at PLAYER 3, and suddenly '
+  - "PLAYER 4: Oh no, PLAYER 3! \r\n\r\nPLAYER 1: Ruuuuuun! \r\n\r\n"
   prompts:
-  - SAY SOMETHING THAT WILL IMMEDIATELY BE IRONIC FROM SOMEONE WHO IS SOON KILLED
-    BY A MONSTROUS VILLAIN
-  - INTRODUCE A THREATENING VILLAIN AS THEY APPROACH THE PROTAGONISTS WITH MURDEROUS
-    INTENT
-  - DESCRIBE HOW AN OVER THE TOP VILLAIN KILLS A NEWLY INTRODUCED PROTAGONIST WITH
-    AN EQUALLY OVER THE TOP METHOD
-  - SAY SOMETHING A SINISTER VILLAIN WOULD SAY AS THEY CHASE DOWN NEW VICTIMS
+  - "DESCRIBE A SPOOKY HOUSE THAT WILL SPELL OUR HEROES\u2019 DOOM"
+  - INTRODUCE A THREATENING VILLAIN, PLAYER 2, APPROACHING WITH MURDEROUS INTENT
+  - NARRATE AN OVER THE TOP VILLAIN, PLAYER 2, KILLING PLAYER 3 WITH AN EQUALLY OVER
+    THE TOP METHOD
+  - DESCRIBE HOW OUR HEROES ESCAPE A VILLAIN CHASING AFTER THEM
   responses:
   - 
   - 

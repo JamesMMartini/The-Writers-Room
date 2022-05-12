@@ -33,7 +33,16 @@ public class VoteForDrawing : MonoBehaviour
         if (gameManager.votes == null)
             gameManager.votes = new int[GameManager.Players.Count];
 
-        promptText.text = gameManager.finalResponses[gameManager.responseIndex];
+        string holder = gameManager.finalResponses[gameManager.responseIndex];
+
+        for (int i = 1; i < GameManager.Players.Count + 1; i++)
+        {
+            string helper = "PLAYER " + i;
+
+            holder = holder.Replace(helper, GameManager.Players[i-1].name);
+        }
+
+        promptText.text = holder;
 
         for (int i = 0; i < images.Length; i++)
         {

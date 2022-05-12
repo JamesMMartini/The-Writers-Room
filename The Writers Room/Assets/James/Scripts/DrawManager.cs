@@ -22,10 +22,23 @@ public class DrawManager : MonoBehaviour
 
     bool isDrawing = false;
 
+    string holderChunks;
+
     // Start is called before the first frame update
     void Start()
     {
+
         gameManager = GameManager.gameManager.GetComponent<GameManager>();
+
+        holderChunks = gameManager.currentMadLib.chunks[gameManager.responseIndex];
+
+        for (int i = 1; i < GameManager.Players.Count+1; i++)
+        {
+            string helper = "PLAYER " + i;
+
+            holderChunks = holderChunks.Replace(helper, GameManager.Players[i-1].name);
+
+        }
 
         drawer.SetActive(false);
 
@@ -34,7 +47,8 @@ public class DrawManager : MonoBehaviour
 
     IEnumerator StartDrawing()
     {
-        readyPrompt.text = gameManager.currentMadLib.chunks[gameManager.responseIndex];
+
+        readyPrompt.text = holderChunks;
         readyPrompt.text += "\n";
         readyPrompt.text += gameManager.finalResponses[gameManager.responseIndex];
 
@@ -103,7 +117,7 @@ public class DrawManager : MonoBehaviour
 
     IEnumerator ShowPrompt()
     {
-        readyPrompt.text = gameManager.currentMadLib.chunks[gameManager.responseIndex];
+        readyPrompt.text = holderChunks;
         readyPrompt.text += "\n";
         readyPrompt.text += gameManager.finalResponses[gameManager.responseIndex];
 

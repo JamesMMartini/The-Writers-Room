@@ -23,7 +23,16 @@ public class ResponseManager : MonoBehaviour
     {
         gameManager = GameManager.gameManager.GetComponent<GameManager>();
 
-        prompt.text = gameManager.currentMadLib.prompts[gameManager.responseIndex];
+        string holder = gameManager.currentMadLib.prompts[gameManager.responseIndex];
+
+        for (int i = 1; i < GameManager.Players.Count + 1; i++) 
+        {
+            string helper = "PLAYER " + i;
+
+            holder = holder.Replace(helper, GameManager.Players[i-1].name);
+        }
+
+        prompt.text = holder;
 
         StartCoroutine(Timer());
     }
