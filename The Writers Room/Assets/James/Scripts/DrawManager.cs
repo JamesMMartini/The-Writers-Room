@@ -14,6 +14,9 @@ public class DrawManager : MonoBehaviour
     [SerializeField] TMP_Text timer;
     [SerializeField] TMP_Text showPromptText;
     [SerializeField] GameObject nextButton;
+    [SerializeField] int time;
+
+    // time should be the amount of time you want minus 1
 
     GameManager gameManager;
 
@@ -53,7 +56,7 @@ public class DrawManager : MonoBehaviour
 
     IEnumerator StartTimer()
     {
-        for (int i = 29; i >= 0; i--)
+        for (int i = time; i >= 0; i--)
         {
             yield return new WaitForSeconds(1f);
 

@@ -366,6 +366,7 @@ MonoBehaviour:
   response: {fileID: 2056511824}
   prompt: {fileID: 647875720}
   timer: {fileID: 1857206556}
+  time: 45
 --- !u!1 &647875718
 GameObject:
   m_ObjectHideFlags: 0
