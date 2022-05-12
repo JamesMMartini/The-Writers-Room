@@ -12,6 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49777f599edc9d94a91a95deba5b3c22, type: 3}
   m_Name: PeriodPiece
   m_EditorClassIdentifier: 
-  chunks: []
-  prompts: []
-  responses: []
+  chunks:
+  - 
+  - 
+  - 
+  - 
+  prompts:
+  - 
+  - 
+  - 
+  - 
+  responses:
+  - 
+  - 
+  - 
+  - 

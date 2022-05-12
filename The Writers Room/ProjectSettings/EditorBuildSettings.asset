@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/James/Scenes/Animatic.unity
     guid: b04e0f121c3ed74489ce9f7ebef7f8df
+  - enabled: 1
+    path: Assets/James/Scenes/SelectMadLib.unity
+    guid: 94c85a7a3b2ecbb4ba4d84cced2fb474
   m_configObjects: {}

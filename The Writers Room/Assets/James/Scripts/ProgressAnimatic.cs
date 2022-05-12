@@ -32,13 +32,10 @@ public class ProgressAnimatic : MonoBehaviour
         gameManager = GameManager.gameManager.GetComponent<GameManager>();
 
         setImageCaption();
-
-        Debug.Log(gameManager.finalResponses[currScene]);
     }
 
     public void nextSection() 
     {
-        Debug.Log(currScene);
         currScene = currScene + 1;
         int sceneNum = currScene + 1;
 
@@ -49,7 +46,6 @@ public class ProgressAnimatic : MonoBehaviour
 
     public void lastSection() 
     {
-        Debug.Log(currScene);
         currScene = currScene - 1;
         int sceneNum = currScene + 1;
 
@@ -60,8 +56,6 @@ public class ProgressAnimatic : MonoBehaviour
 
     void setImageCaption() 
     {
-
-        Debug.Log(gameManager.responseIndex);
 
         image.sprite = CreateSprite(gameManager.finalDrawings[currScene]);
 

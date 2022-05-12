@@ -33,8 +33,6 @@ public class PlayerKeeper : MonoBehaviour
 
         currPlayer = 0;
 
-        Debug.Log(this.transform.localPosition);
-
         canv = GameObject.Find("Canvas");
     }
 
@@ -91,7 +89,7 @@ public class PlayerKeeper : MonoBehaviour
 
     public void LetsStart() 
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("NewPlayer");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SelectMadLib");
     }
     
 }
