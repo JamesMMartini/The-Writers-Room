@@ -13,15 +13,22 @@ MonoBehaviour:
   m_Name: PeriodPiece
   m_EditorClassIdentifier: 
   chunks:
-  - 
-  - 
-  - 
-  - 
+  - 'INT: We see a resplendent BALLROOM with a high ceiling and too many chandeliers.
+    PLAYER 1 enters, wearing'
+  - 'Around them dance the members of court for a GRAND BALL. Across the dance floor
+    they see one of their potential matches, PLAYER 2, and their rival, PLAYER 3,
+    as '
+  - "As they finish, PLAYER 3 approaches. \n\nPLAYER 3: Looks like you should have
+    arrived at the ball a bit earlier PLAYER 1. I\u2019ve already wooed PLAYER 2
+    and there\u2019s nothing you can do about it! \n\nPLAYER 3 laughs, and it sounds
+    like"
+  - "PLAYER 1: [Smirking] Well PLAYER 3, I think taking one\u2019s time is often
+    in their favor. \n\nThey motion to the door as "
   prompts:
-  - 
-  - 
-  - 
-  - 
+  - DESCRIBE AN OUTFIT THAT WOULD MAKE YOU CRY (IN JOY OR SORROW)
+  - DESCRIBE PLAYER 2 AND PLAYER 3 DANCING
+  - DESCRIBE A TERRIBLE LAUGH
+  - DESCRIBE THE MOST ELIGIBLE MATCH IN TOWN AS THEY MAKE A GRAND ENTRANCE
   responses:
   - 
   - 

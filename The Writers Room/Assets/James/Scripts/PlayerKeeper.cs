@@ -66,7 +66,7 @@ public class PlayerKeeper : MonoBehaviour
         // this is where we check which name we're on and add accordingly
         // this should also set the "start game" button to active when enough names have been entered (at least 3 I'd imagine)
 
-        if (name != null) 
+        if (name != "") 
         {
             // add the player to the hierarchy
             gameManager.AddPlayer(name);

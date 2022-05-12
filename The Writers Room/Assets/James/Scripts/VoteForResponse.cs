@@ -23,11 +23,18 @@ public class VoteForResponse : MonoBehaviour
         gameManager.votes = new int[GameManager.Players.Count];
 
         prompt.text = gameManager.currentMadLib.chunks[gameManager.responseIndex];
+        
+        int j = 0;
 
         for (int i = 0; i < GameManager.Players.Count; i++)
         {
-            responses[i].gameObject.SetActive(true);
-            responses[i].text = GameManager.Players[i].answers[gameManager.responseIndex];
+            if (GameManager.Players[i].answers[gameManager.responseIndex] != "") 
+            {
+                responses[j].gameObject.SetActive(true);
+                responses[j].text = GameManager.Players[i].answers[gameManager.responseIndex];
+
+                j += 1;
+            }    
         }
     }
 
