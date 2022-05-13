@@ -66,7 +66,7 @@ public class PlayerKeeper : MonoBehaviour
     public void nextName() 
     {
         inputField = GameObject.Find("InputField (TMP)").GetComponent<TMP_InputField>();
-        string name = inputField.text;
+        string name = inputField.text.Replace("\n", "").Replace("\r", "");
 
         // this is where we check which name we're on and add accordingly
         // this should also set the "start game" button to active when enough names have been entered (at least 3 I'd imagine)
